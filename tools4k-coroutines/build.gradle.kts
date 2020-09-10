@@ -1,6 +1,3 @@
-import com.novoda.gradle.release.PublishExtension
-import java.util.*
-
 plugins {
     id("kotlin")
 }
@@ -26,19 +23,23 @@ dependencies {
 }
 
 /*
- * publish
+ * publish to bintray
  */
-project.file("local.properties").takeIf { it.exists() }?.let { file -> file.inputStream().use { input -> Properties().apply { load(input) } } }?.takeIf { !it.isEmpty }?.let { moduleLocalProperties ->
-    apply(plugin = "com.novoda.bintray-release")
-
-    configure<PublishExtension> {
+`java.util`.Properties().apply {
+    rootProject.file("local.properties").takeIf { it.exists() }?.inputStream()?.use { load(it) }
+    project.file("local.properties").takeIf { it.exists() }?.inputStream()?.use { load(it) }
+}.takeIf {
+    it.getProperty("bintray.user") != null && it.getProperty("bintray.userOrg") != null && it.getProperty("bintray.apiKey") != null
+}?.let { localProperties ->
+    apply { plugin("com.github.panpf.bintraypublish") }
+    configure<com.github.panpf.bintray.publish.PublishExtension> {
         groupId = "com.github.panpf.tools4k"
         artifactId = "tools4k-coroutines"
         publishVersion = property("VERSION").toString()
         desc = "Kotlin, Tools, Coroutines"
         website = "https://github.com/panpf/tools4k"
-        userOrg = moduleLocalProperties.getProperty("bintray.userOrg")
-        bintrayUser = moduleLocalProperties.getProperty("bintray.user")
-        bintrayKey = moduleLocalProperties.getProperty("bintray.apikey")
+        userOrg = localProperties.getProperty("bintray.userOrg")
+        bintrayUser = localProperties.getProperty("bintray.user")
+        bintrayKey = localProperties.getProperty("bintray.apiKey")
     }
 }

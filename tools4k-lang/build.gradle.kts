@@ -29,7 +29,7 @@ dependencies {
 }.takeIf {
     it.getProperty("bintray.user") != null && it.getProperty("bintray.userOrg") != null && it.getProperty("bintray.apiKey") != null
 }?.let { localProperties ->
-    apply { plugin("com.github.panpf.bintraypublish") }
+    apply { plugin("com.github.panpf.bintray-publish") }
     configure<com.github.panpf.bintray.publish.PublishExtension> {
         groupId = "com.github.panpf.tools4k"
         artifactId = "tools4k-lang"

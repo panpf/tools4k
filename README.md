@@ -23,8 +23,8 @@ implementation "io.github.panpf.tools4k:tools4k-lang:$LAST_VERSION"
 ```
 
 Dependencies：
-* org.jetbrains.kotlin:kotlin-stdlib-jdk7: 1.4.0
-* org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9
+* org.jetbrains.kotlin:kotlin-stdlib-jdk7: 1.5.0
+* org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0
 
 
 ## Modules

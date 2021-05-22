@@ -1,27 +1,25 @@
-# Tools4k
+# Tools4K
 
 ![Platform][platform_kotlin_icon]
 ![kotlin_jvmtarget_icon][kotlin_jvmtarget_icon]
+[![Download][release_icon]][release_link]
 [![License][license_icon]][license_link]
 
 Extensions to the Kotlin standard library
 
-
 ## Getting Started
 
-This library has been published to `jcenter` and private repositories `https://dl.bintray.com/panpf/maven/`, you can freely choose where to download it
-
-Add the following dependencies to your module `build.gradle` file ：
+This library has been published to `mavenCentral`. Add the following dependencies to your module `build.gradle` file ：
 ```grovvy
-implementation "com.github.panpf.tools4k:tools4k:$LAST_VERSION"
+implementation "io.github.panpf.tools4k:tools4k:${LAST_VERSION}"
 ```
 
-Please replace `$LAST_VERSION` with the latest version: [![Download][version_icon]][version_link]
+`${LAST_VERSION}`: [![Download][release_icon]][release_link] (no include 'v')
 
-The "com.github.panpf.tools4k:tools4k:$LAST_VERSION" dependency will add all the modules included in tools4k to your project. If you only need of one of the modules, you can just add it to your project, all supported modules as follows:
+The "io.github.panpf.tools4k:tools4k:${LAST_VERSION}" dependency will add all the modules included in tools4k to your project. If you only need of one of the modules, you can just add it to your project, all supported modules as follows:
 ```groovy
-implementation "com.github.panpf.tools4k:tools4k-coroutines:$LAST_VERSION"
-implementation "com.github.panpf.tools4k:tools4k-lang:$LAST_VERSION"
+implementation "io.github.panpf.tools4k:tools4k-coroutines:$LAST_VERSION"
+implementation "io.github.panpf.tools4k:tools4k-lang:$LAST_VERSION"
 ```
 
 Dependencies：
@@ -72,8 +70,8 @@ Please view the [CHANGELOG.md] file
 [platform_kotlin_icon]: https://img.shields.io/badge/Platform-Kotlin-blue.svg
 [license_icon]: https://img.shields.io/badge/License-Apache%202-blue.svg
 [license_link]: https://www.apache.org/licenses/LICENSE-2.0
-[version_icon]: https://api.bintray.com/packages/panpf/maven/tools4k/images/download.svg
-[version_link]:https://bintray.com/panpf/maven/tools4k/_latestVersion
+[release_icon]: https://img.shields.io/maven-central/v/io.github.panpf.tools4k/tools4k
+[release_link]: https://repo1.maven.org/maven2/io/github/panpf/tools4k/
 [kotlin_jvmtarget_icon]: https://img.shields.io/badge/KotlinJvmTarget-1.6-red.svg
 
 [Coroutinesx.kt]: tools4k-coroutines/src/main/java/com/github/panpf/tools4k/coroutines/Coroutinesx.kt
